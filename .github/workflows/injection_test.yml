@@ -1,0 +1,12 @@
+name: Injection Test
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  vulnerable:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Vulnerable step
+        run: echo "New issue title is: ${{ github.event.issue.title }}"
