@@ -5,9 +5,11 @@ on:
     types: [opened]
 
 jobs:
-  vulnerable:
+  secure:
     runs-on: ubuntu-latest
     steps:
-      - name: Vulnerable step
+      - name: Secure step
+        env:
+          ISSUE_TITLE: ${{ github.event.issue.title }}
         run: |
-          echo "New issue title is: ${{ github.event.issue.title }}"
+          echo "New issue title is: $ISSUE_TITLE"
